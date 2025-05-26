@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  db_cicd:
+      name: CD Example Production
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout My Code
+          uses: actions/checkout@v4.2.2
+
+        - name: SSH Remote
+          uses: appleboy/ssh-action@v1
+          with:
+            host: ${{ secrets.SERVER_HOST }}
+            username: ${{ secrets.SERVER_USERNAME }}
+            password: ${{ secrets.SERVER_PASSWORD }}
+            port: 22
+            script: |
+              echo "berhasil konek ke Server"
+              cd /home/edgar/CICD_DATABASE
+              echo "berhasil masuk ke folder"
