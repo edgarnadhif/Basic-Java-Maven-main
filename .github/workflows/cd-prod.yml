@@ -19,6 +19,25 @@ jobs:
             password: ${{ secrets.SERVER_PASSWORD }}
             port: 22
             script: |
-              echo "berhasil konek ke Server"
-              cd /home/edgar/CICD_DATABASE
-              echo "berhasil masuk ke folder"
+              sudo su
+              echo "Berhasil konek cuyyyy"
+
+              if [ -d "/home/edgar/CICD_DATABASE" ]; then
+                cd /home/edgar/CICD_DATABASE
+                echo "Berhasil masuk folder coyyy"
+              else
+                mkdir -p /home/edgar/CICD_DATABASE
+                cd /home/edgar/CICD_DATABASE
+                echo "Folder dibuat dan berhasil masuk folder coyyy"
+              fi
+
+              if [ -d ".git" ]; then
+                git remote set-url origin https://${{ secrets.GIT_USERNAME }}:${{ secrets.GIT_PAT }}@github.com/Basic-Java-Maven-main.git
+                git pull origin main
+                echo "Git remote URL updated with credentials"
+              else
+                echo ".git directory not found"
+                git clone https://${{ secrets.GIT_USERNAME }}:${{ secrets.GIT_PAT }}@github.com/Basic-Java-Maven-main.git .
+                echo "Repository cloned with credentials"
+              fi
+              echo "Berhasil konek cuyyyy"
