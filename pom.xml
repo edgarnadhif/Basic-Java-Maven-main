@@ -13,7 +13,6 @@
 </dependencies>
 
 <distributionManagement>
-
 	<repository>
       <id>github</id>
       <name>GitHub Packages</name>
