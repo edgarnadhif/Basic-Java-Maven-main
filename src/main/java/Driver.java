@@ -1,4 +1,4 @@
-import src.main.java;
+package src.main.java;
 
 public class Driver {
 
