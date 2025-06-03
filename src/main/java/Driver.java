@@ -1,20 +1,21 @@
+import src.main.java;
 
 public class Driver {
 
 	public static void main(String[] args) {
-		
+
 		Counter counter = new Counter();
-		
-		System.out.println("Count 1 :" + counter.getCount());
-		
+
+		System.out.println("test1 Count:" + counter.getCount());
+
 		counter.increment();
-		
-		System.out.println("Count 2:" + counter.getCount());
-		
+
+		System.out.println("test1 Count:" + counter.getCount());
+
 		counter.decrement();
-		
-		System.out.println("Count 3:" + counter.getCount());
-		
+
+		System.out.println("test1 Count:" + counter.getCount());
+
 	}
 
 }
