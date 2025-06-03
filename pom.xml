@@ -13,7 +13,7 @@
 </dependencies>
 
 <distributionManagement>
-    <repository>
+	<repository>
         <id>github</id>
         <name>GitHub Packages</name>
         <url>https://maven.pkg.github.com/edgarnadhif/Basic-Java-Maven-main</url>
